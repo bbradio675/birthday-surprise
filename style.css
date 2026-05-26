@@ -1,0 +1,143 @@
+  height: 8px;
+  border-radius: 50%;
+  background: #ffe5a3;
+  box-shadow: 0 0 20px #ffd17b;
+  animation: sparkBurst 1200ms ease-out forwards;
+}
+
+.romantic-confetti {
+  top: -18px;
+  width: 10px;
+  height: 16px;
+  border-radius: 70% 30% 70% 30%;
+  background: var(--confetti-color);
+  animation: birthdayConfetti var(--duration) linear forwards;
+}
+
+@keyframes birthdayFloat {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(0.9); opacity: 0.45; }
+  50% { transform: translate3d(12px, -22px, 0) scale(1.15); opacity: 1; }
+}
+
+@keyframes petalDrift {
+  0%, 100% { translate: 0 0; rotate: 0deg; opacity: 0.55; }
+  50% { translate: 18px -26px; rotate: 16deg; opacity: 0.9; }
+}
+
+@keyframes cakeFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes candleFlicker {
+  0%, 100% { transform: translateX(-50%) scale(0.95, 1); filter: brightness(0.96); }
+  42% { transform: translateX(-48%) scale(1.12, 1.18); filter: brightness(1.22); }
+  72% { transform: translateX(-53%) scale(0.98, 0.92); filter: brightness(1.05); }
+}
+
+@keyframes sparkBurst {
+  from { transform: translate(-50%, -50%) scale(0.4); opacity: 1; }
+  to { transform: translate(calc(-50% + var(--spark-x)), calc(-50% + var(--spark-y))) scale(0); opacity: 0; }
+}
+
+@keyframes birthdayConfetti {
+  to {
+    transform: translate3d(var(--drift), 112vh, 0) rotate(760deg);
+    opacity: 0;
+  }
+}
+
+.scene::before {
+  content: "";
+  position: absolute;
+    right: -30px;
+    top: 40px;
+  }
+
+  .final-surprise-button {
+    width: min(100%, 300px);
+    margin-bottom: 6px;
+  }
+
+  .birthday-page {
+    align-items: start;
+    padding: 46px 20px 20px;
+  }
+
+  .birthday-copy {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .birthday-copy h2 {
+    font-size: clamp(3.2rem, 16vw, 5rem);
+  }
+
+  .birthday-message {
+    max-width: 350px;
+  }
+
+  .birthday-page.celebrating .birthday-message {
+    max-height: 360px;
+  }
+
+  .birthday-message p {
+    font-size: clamp(1.15rem, 5.4vw, 1.62rem);
+  }
+
+  .cake-stage {
+    height: 34vh;
+  }
+
+  .cake {
+    width: min(92vw, 390px);
+    height: 270px;
+  }
+
+  .birthday-bottom {
+    bottom: 10px;
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 430px) {
+    right: 16px;
+    top: 18px;
+  }
+
+  .birthday-page {
+    padding-top: 34px;
+  }
+
+  .birthday-kicker {
+    font-size: 0.68rem;
+  }
+
+  .light-candles-button {
+    width: min(100%, 280px);
+    min-height: 52px;
+  }
+
+  .cake-stage {
+    height: 30vh;
+  }
+
+  .cake {
+    width: 350px;
+    height: 244px;
+  }
+
+  .candle-row i {
+    height: 34px;
+  }
+
+  .birthday-page.celebrating .birthday-copy {
+    gap: 10px;
+  }
+
+  .birthday-page.celebrating .birthday-copy h2 {
+    font-size: clamp(2.5rem, 12vw, 3.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
